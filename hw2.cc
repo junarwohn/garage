@@ -63,15 +63,6 @@ double derivative_approximate(double * func, int degree, double x) {
     return (get_val(func, degree, x + 0.0001) - get_val(func, degree, x)) / 0.0001;
 }
 
-double calculate(double x) {
-    double result = 0;
-    for (int i = 0; i < g_degree + 1; ++i) {
-        result *= x;
-        result += g_coefficients[i];
-    }
-    return result;
-}
-
 double newton_method_derivate(double * diff1, double * diff2, double x) {
     double x_new = x - (get_val(diff1, g_degree - 1, x) / get_val(diff2, g_degree - 2, x));
     if ((abs((x_new - x) / x_new)) < TH) {
