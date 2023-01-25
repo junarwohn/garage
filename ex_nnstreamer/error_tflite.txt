@@ -1,0 +1,48 @@
+Setting pipeline to PAUSED ...
+Pipeline is PREROLLING ...
+/GstPipeline:pipeline0/GstDecodeBin:decodebin0/GstTypeFindElement:typefind.GstPad:src: caps = image/png
+/GstPipeline:pipeline0/GstDecodeBin:decodebin0/GstTypeFindElement:typefind.GstPad:src: caps = NULL
+/GstPipeline:pipeline0/GstDecodeBin:decodebin0/GstPngDec:pngdec0.GstPad:sink: caps = image/png, width=(int)931, height=(int)639
+/GstPipeline:pipeline0/GstDecodeBin:decodebin0/GstPngParse:pngparse0.GstPad:src: caps = image/png, width=(int)931, height=(int)639
+/GstPipeline:pipeline0/GstDecodeBin:decodebin0/GstPngDec:pngdec0.GstPad:src: caps = video/x-raw, format=(string)RGBA, width=(int)931, height=(int)639, interlace-mode=(string)progressive, multiview-mode=(string)mono, multiview-flags=(GstVideoMultiviewFlagsSet)0:ffffffff:/right-view-first/left-flipped/left-flopped/right-flipped/right-flopped/half-aspect/mixed-mono, pixel-aspect-ratio=(fraction)1/1, colorimetry=(string)sRGB, framerate=(fraction)0/1
+/GstPipeline:pipeline0/GstVideoConvert:videoconvert0.GstPad:src: caps = video/x-raw, width=(int)931, height=(int)639, interlace-mode=(string)progressive, multiview-mode=(string)mono, multiview-flags=(GstVideoMultiviewFlagsSet)0:ffffffff:/right-view-first/left-flipped/left-flopped/right-flipped/right-flopped/half-aspect/mixed-mono, pixel-aspect-ratio=(fraction)1/1, framerate=(fraction)0/1, format=(string)RGB, views=(int)1
+/GstPipeline:pipeline0/GstVideoScale:videoscale0.GstPad:src: caps = video/x-raw, width=(int)256, height=(int)256, interlace-mode=(string)progressive, multiview-mode=(string)mono, multiview-flags=(GstVideoMultiviewFlagsSet)0:ffffffff:/right-view-first/left-flipped/left-flopped/right-flipped/right-flopped/half-aspect/mixed-mono, pixel-aspect-ratio=(fraction)1/1, format=(string)RGB, views=(int)1, framerate=(fraction)0/1
+/GstPipeline:pipeline0/GstImageFreeze:imagefreeze0.GstPad:src: caps = video/x-raw, width=(int)256, height=(int)256, interlace-mode=(string)progressive, multiview-mode=(string)mono, multiview-flags=(GstVideoMultiviewFlagsSet)0:ffffffff:/right-view-first/left-flipped/left-flopped/right-flipped/right-flopped/half-aspect/mixed-mono, pixel-aspect-ratio=(fraction)1/1, format=(string)RGB, views=(int)1, framerate=(fraction)10/1
+/GstPipeline:pipeline0/GstCapsFilter:capsfilter0.GstPad:src: caps = video/x-raw, width=(int)256, height=(int)256, interlace-mode=(string)progressive, multiview-mode=(string)mono, multiview-flags=(GstVideoMultiviewFlagsSet)0:ffffffff:/right-view-first/left-flipped/left-flopped/right-flipped/right-flopped/half-aspect/mixed-mono, pixel-aspect-ratio=(fraction)1/1, format=(string)RGB, views=(int)1, framerate=(fraction)10/1
+/GstPipeline:pipeline0/GstTee:t.GstTeePad:src_0: caps = video/x-raw, width=(int)256, height=(int)256, interlace-mode=(string)progressive, multiview-mode=(string)mono, multiview-flags=(GstVideoMultiviewFlagsSet)0:ffffffff:/right-view-first/left-flipped/left-flopped/right-flipped/right-flopped/half-aspect/mixed-mono, pixel-aspect-ratio=(fraction)1/1, format=(string)RGB, views=(int)1, framerate=(fraction)10/1
+/GstPipeline:pipeline0/GstQueue:queue0.GstPad:sink: caps = video/x-raw, width=(int)256, height=(int)256, interlace-mode=(string)progressive, multiview-mode=(string)mono, multiview-flags=(GstVideoMultiviewFlagsSet)0:ffffffff:/right-view-first/left-flipped/left-flopped/right-flipped/right-flopped/half-aspect/mixed-mono, pixel-aspect-ratio=(fraction)1/1, format=(string)RGB, views=(int)1, framerate=(fraction)10/1
+/GstPipeline:pipeline0/GstTee:t.GstTeePad:src_1: caps = video/x-raw, width=(int)256, height=(int)256, interlace-mode=(string)progressive, multiview-mode=(string)mono, multiview-flags=(GstVideoMultiviewFlagsSet)0:ffffffff:/right-view-first/left-flipped/left-flopped/right-flipped/right-flopped/half-aspect/mixed-mono, pixel-aspect-ratio=(fraction)1/1, format=(string)RGB, views=(int)1, framerate=(fraction)10/1
+/GstPipeline:pipeline0/GstQueue:queue0.GstPad:src: caps = video/x-raw, width=(int)256, height=(int)256, interlace-mode=(string)progressive, multiview-mode=(string)mono, multiview-flags=(GstVideoMultiviewFlagsSet)0:ffffffff:/right-view-first/left-flipped/left-flopped/right-flipped/right-flopped/half-aspect/mixed-mono, pixel-aspect-ratio=(fraction)1/1, format=(string)RGB, views=(int)1, framerate=(fraction)10/1
+/GstPipeline:pipeline0/GstQueue:queue0.GstPad:src: caps = video/x-raw, width=(int)256, height=(int)256, interlace-mode=(string)progressive, multiview-mode=(string)mono, multiview-flags=(GstVideoMultiviewFlagsSet)0:ffffffff:/right-view-first/left-flipped/left-flopped/right-flipped/right-flopped/half-aspect/mixed-mono, pixel-aspect-ratio=(fraction)1/1, format=(string)RGB, views=(int)1, framerate=(fraction)10/1
+/GstPipeline:pipeline0/GstTensorConverter:tensorconverter0.GstPad:src: caps = other/tensor, framerate=(fraction)10/1, dimension=(string)3:256:256:1, type=(string)uint8
+/GstPipeline:pipeline0/GstTensorTransform:tensortransform0.GstPad:src: caps = other/tensor, framerate=(fraction)10/1, dimension=(string)3:256:256:1, type=(string)float32
+/GstPipeline:pipeline0/GstTensorTransform:tensortransform0.GstPad:sink: caps = other/tensor, framerate=(fraction)10/1, dimension=(string)3:256:256:1, type=(string)uint8
+/GstPipeline:pipeline0/GstTensorConverter:tensorconverter0.GstPad:sink: caps = video/x-raw, width=(int)256, height=(int)256, interlace-mode=(string)progressive, multiview-mode=(string)mono, multiview-flags=(GstVideoMultiviewFlagsSet)0:ffffffff:/right-view-first/left-flipped/left-flopped/right-flipped/right-flopped/half-aspect/mixed-mono, pixel-aspect-ratio=(fraction)1/1, format=(string)RGB, views=(int)1, framerate=(fraction)10/1
+/GstPipeline:pipeline0/GstVideoMixer2:mix.GstVideoMixer2Pad:sink_0: caps = video/x-raw, width=(int)256, height=(int)256, interlace-mode=(string)progressive, multiview-mode=(string)mono, multiview-flags=(GstVideoMultiviewFlagsSet)0:ffffffff:/right-view-first/left-flipped/left-flopped/right-flipped/right-flopped/half-aspect/mixed-mono, pixel-aspect-ratio=(fraction)1/1, format=(string)RGB, views=(int)1, framerate=(fraction)10/1
+/GstPipeline:pipeline0/GstVideoScale:videoscale0.GstPad:sink: caps = video/x-raw, width=(int)931, height=(int)639, interlace-mode=(string)progressive, multiview-mode=(string)mono, multiview-flags=(GstVideoMultiviewFlagsSet)0:ffffffff:/right-view-first/left-flipped/left-flopped/right-flipped/right-flopped/half-aspect/mixed-mono, pixel-aspect-ratio=(fraction)1/1, framerate=(fraction)0/1, format=(string)RGB, views=(int)1
+/GstPipeline:pipeline0/GstVideoConvert:videoconvert0.GstPad:sink: caps = video/x-raw, format=(string)RGBA, width=(int)931, height=(int)639, interlace-mode=(string)progressive, multiview-mode=(string)mono, multiview-flags=(GstVideoMultiviewFlagsSet)0:ffffffff:/right-view-first/left-flipped/left-flopped/right-flipped/right-flopped/half-aspect/mixed-mono, pixel-aspect-ratio=(fraction)1/1, colorimetry=(string)sRGB, framerate=(fraction)0/1
+/GstPipeline:pipeline0/GstDecodeBin:decodebin0.GstDecodePad:src_0.GstProxyPad:proxypad2: caps = video/x-raw, format=(string)RGBA, width=(int)931, height=(int)639, interlace-mode=(string)progressive, multiview-mode=(string)mono, multiview-flags=(GstVideoMultiviewFlagsSet)0:ffffffff:/right-view-first/left-flipped/left-flopped/right-flipped/right-flopped/half-aspect/mixed-mono, pixel-aspect-ratio=(fraction)1/1, colorimetry=(string)sRGB, framerate=(fraction)0/1
+handling interrupt.
+Interrupt: Stopping pipeline ...
+Setting pipeline to NULL ...
+Freeing pipeline ...
+
+
+(gst-launch-1.0:7286): GLib-CRITICAL **: 16:21:28.529: g_string_insert_len: assertion 'len == 0 || val != NULL' failed
+
+(gst-launch-1.0:7286): GLib-CRITICAL **: 16:21:28.529: g_string_insert_len: assertion 'len == 0 || val != NULL' failed
+
+(gst-launch-1.0:7286): GLib-CRITICAL **: 16:21:28.531: g_string_insert_len: assertion 'len == 0 || val != NULL' failed
+
+(gst-launch-1.0:7286): GLib-CRITICAL **: 16:21:28.532: g_string_insert_len: assertion 'len == 0 || val != NULL' failed
+
+(gst-launch-1.0:7286): GLib-CRITICAL **: 16:21:28.532: g_string_insert_len: assertion 'len == 0 || val != NULL' failed
+
+(gst-launch-1.0:7286): GLib-CRITICAL **: 16:21:28.533: g_string_insert_len: assertion 'len == 0 || val != NULL' failed
+
+(gst-launch-1.0:7286): GLib-CRITICAL **: 16:21:28.533: g_string_insert_len: assertion 'len == 0 || val != NULL' failed
+
+(gst-launch-1.0:7286): GLib-CRITICAL **: 16:21:28.534: g_string_insert_len: assertion 'len == 0 || val != NULL' failed
+
+(gst-launch-1.0:7286): GLib-CRITICAL **: 16:21:28.534: g_string_insert_len: assertion 'len == 0 || val != NULL' failed
+

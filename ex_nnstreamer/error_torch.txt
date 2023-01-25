@@ -1,0 +1,373 @@
+** Message: 16:03:22.858: gpu = 0, accl = cpu
+
+** (gst-launch-1.0:6598): CRITICAL **: 16:03:22.862: Exception while loading the model: [enforce fail at inline_container.cc:208] . file not found: archive/constants.pkl
+frame #0: c10::ThrowEnforceNotMet(char const*, int, char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, void const*) + 0x68 (0x7fadbfd845b8 in /lib/libc10.so)
+frame #1: caffe2::serialize::PyTorchStreamReader::getRecordID(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xda (0x7fadbd84ff9a in /lib/libtorch_cpu.so)
+frame #2: caffe2::serialize::PyTorchStreamReader::getRecord(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0x3c (0x7fadbd84fffc in /lib/libtorch_cpu.so)
+frame #3: torch::jit::readArchiveAndTensors(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, c10::optional<std::function<c10::StrongTypePtr (c10::QualifiedName const&)> >, c10::optional<std::function<c10::intrusive_ptr<c10::ivalue::Object, c10::detail::intrusive_target_default_null_type<c10::ivalue::Object> > (c10::StrongTypePtr, c10::IValue)> >, c10::optional<c10::Device>, caffe2::serialize::PyTorchStreamReader&) + 0xab (0x7fadbea08fcb in /lib/libtorch_cpu.so)
+frame #4: <unknown function> + 0x34c36c9 (0x7fadbea096c9 in /lib/libtorch_cpu.so)
+frame #5: <unknown function> + 0x34c567b (0x7fadbea0b67b in /lib/libtorch_cpu.so)
+frame #6: torch::jit::load(std::unique_ptr<caffe2::serialize::ReadAdapterInterface, std::default_delete<caffe2::serialize::ReadAdapterInterface> >, c10::optional<c10::Device>, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >&) + 0x19b (0x7fadbea0c43b in /lib/libtorch_cpu.so)
+frame #7: torch::jit::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, c10::optional<c10::Device>, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >&) + 0x79 (0x7fadbea0db29 in /lib/libtorch_cpu.so)
+frame #8: TorchCore::loadModel() + 0x96 (0x7fadbfdab1e6 in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #9: TorchCore::init(_GstTensorFilterProperties const*) + 0x68 (0x7fadbfdab648 in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #10: <unknown function> + 0xa6fe (0x7fadbfdab6fe in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #11: gst_tensor_filter_common_open_fw + 0xd4 (0x7fadc000b424 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #12: gst_tensor_filter_load_tensor_info + 0x1c8 (0x7fadc000b8f8 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #13: <unknown function> + 0x3a022 (0x7fadc0007022 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #14: <unknown function> + 0x457d0 (0x7fadc03647d0 in /lib/x86_64-linux-gnu/libgstbase-1.0.so.0)
+frame #15: <unknown function> + 0x4aa55 (0x7fadc0369a55 in /lib/x86_64-linux-gnu/libgstbase-1.0.so.0)
+frame #16: gst_pad_query + 0x3c8 (0x7fadc1925b18 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #17: gst_pad_query_caps + 0xec (0x7fadc19615cc in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #18: gst_element_get_compatible_pad + 0xad6 (0x7fadc1962196 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #19: gst_element_link_pads_full + 0xb65 (0x7fadc1962ef5 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #20: gst_element_link_pads_filtered + 0x2a6 (0x7fadc1963816 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #21: <unknown function> + 0xdb575 (0x7fadc197e575 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #22: gst_parse_launch_full + 0xa4 (0x7fadc1974a44 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #23: gst_parse_launchv_full + 0x1cf (0x7fadc1974ccf in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #24: <unknown function> + 0x43f2 (0x55c773f403f2 in gst-launch-1.0)
+frame #25: __libc_start_main + 0xf3 (0x7fadc152c0b3 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #26: <unknown function> + 0x4d2e (0x55c773f40d2e in gst-launch-1.0)
+
+
+** (gst-launch-1.0:6598): CRITICAL **: 16:03:22.862: Failed to load model
+
+failed to initialize the object: PyTorch
+** Message: 16:03:22.862: gpu = 0, accl = cpu
+
+** (gst-launch-1.0:6598): CRITICAL **: 16:03:22.865: Exception while loading the model: [enforce fail at inline_container.cc:208] . file not found: archive/constants.pkl
+frame #0: c10::ThrowEnforceNotMet(char const*, int, char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, void const*) + 0x68 (0x7fadbfd845b8 in /lib/libc10.so)
+frame #1: caffe2::serialize::PyTorchStreamReader::getRecordID(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xda (0x7fadbd84ff9a in /lib/libtorch_cpu.so)
+frame #2: caffe2::serialize::PyTorchStreamReader::getRecord(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0x3c (0x7fadbd84fffc in /lib/libtorch_cpu.so)
+frame #3: torch::jit::readArchiveAndTensors(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, c10::optional<std::function<c10::StrongTypePtr (c10::QualifiedName const&)> >, c10::optional<std::function<c10::intrusive_ptr<c10::ivalue::Object, c10::detail::intrusive_target_default_null_type<c10::ivalue::Object> > (c10::StrongTypePtr, c10::IValue)> >, c10::optional<c10::Device>, caffe2::serialize::PyTorchStreamReader&) + 0xab (0x7fadbea08fcb in /lib/libtorch_cpu.so)
+frame #4: <unknown function> + 0x34c36c9 (0x7fadbea096c9 in /lib/libtorch_cpu.so)
+frame #5: <unknown function> + 0x34c567b (0x7fadbea0b67b in /lib/libtorch_cpu.so)
+frame #6: torch::jit::load(std::unique_ptr<caffe2::serialize::ReadAdapterInterface, std::default_delete<caffe2::serialize::ReadAdapterInterface> >, c10::optional<c10::Device>, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >&) + 0x19b (0x7fadbea0c43b in /lib/libtorch_cpu.so)
+frame #7: torch::jit::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, c10::optional<c10::Device>, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >&) + 0x79 (0x7fadbea0db29 in /lib/libtorch_cpu.so)
+frame #8: TorchCore::loadModel() + 0x96 (0x7fadbfdab1e6 in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #9: TorchCore::init(_GstTensorFilterProperties const*) + 0x68 (0x7fadbfdab648 in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #10: <unknown function> + 0xa6fe (0x7fadbfdab6fe in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #11: gst_tensor_filter_common_open_fw + 0xd4 (0x7fadc000b424 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #12: gst_tensor_filter_load_tensor_info + 0x92 (0x7fadc000b7c2 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #13: <unknown function> + 0x3a022 (0x7fadc0007022 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #14: <unknown function> + 0x457d0 (0x7fadc03647d0 in /lib/x86_64-linux-gnu/libgstbase-1.0.so.0)
+frame #15: <unknown function> + 0x4aa55 (0x7fadc0369a55 in /lib/x86_64-linux-gnu/libgstbase-1.0.so.0)
+frame #16: gst_pad_query + 0x3c8 (0x7fadc1925b18 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #17: gst_pad_query_caps + 0xec (0x7fadc19615cc in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #18: gst_element_get_compatible_pad + 0xad6 (0x7fadc1962196 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #19: gst_element_link_pads_full + 0xb65 (0x7fadc1962ef5 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #20: gst_element_link_pads_filtered + 0x2a6 (0x7fadc1963816 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #21: <unknown function> + 0xdb575 (0x7fadc197e575 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #22: gst_parse_launch_full + 0xa4 (0x7fadc1974a44 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #23: gst_parse_launchv_full + 0x1cf (0x7fadc1974ccf in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #24: <unknown function> + 0x43f2 (0x55c773f403f2 in gst-launch-1.0)
+frame #25: __libc_start_main + 0xf3 (0x7fadc152c0b3 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #26: <unknown function> + 0x4d2e (0x55c773f40d2e in gst-launch-1.0)
+
+
+** (gst-launch-1.0:6598): CRITICAL **: 16:03:22.865: Failed to load model
+
+failed to initialize the object: PyTorch
+** Message: 16:03:22.865: gpu = 0, accl = cpu
+
+** (gst-launch-1.0:6598): CRITICAL **: 16:03:22.868: Exception while loading the model: [enforce fail at inline_container.cc:208] . file not found: archive/constants.pkl
+frame #0: c10::ThrowEnforceNotMet(char const*, int, char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, void const*) + 0x68 (0x7fadbfd845b8 in /lib/libc10.so)
+frame #1: caffe2::serialize::PyTorchStreamReader::getRecordID(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xda (0x7fadbd84ff9a in /lib/libtorch_cpu.so)
+frame #2: caffe2::serialize::PyTorchStreamReader::getRecord(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0x3c (0x7fadbd84fffc in /lib/libtorch_cpu.so)
+frame #3: torch::jit::readArchiveAndTensors(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, c10::optional<std::function<c10::StrongTypePtr (c10::QualifiedName const&)> >, c10::optional<std::function<c10::intrusive_ptr<c10::ivalue::Object, c10::detail::intrusive_target_default_null_type<c10::ivalue::Object> > (c10::StrongTypePtr, c10::IValue)> >, c10::optional<c10::Device>, caffe2::serialize::PyTorchStreamReader&) + 0xab (0x7fadbea08fcb in /lib/libtorch_cpu.so)
+frame #4: <unknown function> + 0x34c36c9 (0x7fadbea096c9 in /lib/libtorch_cpu.so)
+frame #5: <unknown function> + 0x34c567b (0x7fadbea0b67b in /lib/libtorch_cpu.so)
+frame #6: torch::jit::load(std::unique_ptr<caffe2::serialize::ReadAdapterInterface, std::default_delete<caffe2::serialize::ReadAdapterInterface> >, c10::optional<c10::Device>, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >&) + 0x19b (0x7fadbea0c43b in /lib/libtorch_cpu.so)
+frame #7: torch::jit::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, c10::optional<c10::Device>, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >&) + 0x79 (0x7fadbea0db29 in /lib/libtorch_cpu.so)
+frame #8: TorchCore::loadModel() + 0x96 (0x7fadbfdab1e6 in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #9: TorchCore::init(_GstTensorFilterProperties const*) + 0x68 (0x7fadbfdab648 in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #10: <unknown function> + 0xa6fe (0x7fadbfdab6fe in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #11: gst_tensor_filter_common_open_fw + 0xd4 (0x7fadc000b424 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #12: gst_tensor_filter_load_tensor_info + 0x1c8 (0x7fadc000b8f8 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #13: <unknown function> + 0x3a022 (0x7fadc0007022 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #14: <unknown function> + 0x457d0 (0x7fadc03647d0 in /lib/x86_64-linux-gnu/libgstbase-1.0.so.0)
+frame #15: <unknown function> + 0x4aa55 (0x7fadc0369a55 in /lib/x86_64-linux-gnu/libgstbase-1.0.so.0)
+frame #16: gst_pad_query + 0x3c8 (0x7fadc1925b18 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #17: gst_pad_query_caps + 0xec (0x7fadc19615cc in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #18: <unknown function> + 0x79d37 (0x7fadc191cd37 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #19: gst_pad_link_full + 0x19a (0x7fadc192865a in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #20: <unknown function> + 0xbbbbe (0x7fadc195ebbe in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #21: gst_element_link_pads_full + 0xb99 (0x7fadc1962f29 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #22: gst_element_link_pads_filtered + 0x2a6 (0x7fadc1963816 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #23: <unknown function> + 0xdb575 (0x7fadc197e575 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #24: gst_parse_launch_full + 0xa4 (0x7fadc1974a44 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #25: gst_parse_launchv_full + 0x1cf (0x7fadc1974ccf in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #26: <unknown function> + 0x43f2 (0x55c773f403f2 in gst-launch-1.0)
+frame #27: __libc_start_main + 0xf3 (0x7fadc152c0b3 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #28: <unknown function> + 0x4d2e (0x55c773f40d2e in gst-launch-1.0)
+
+
+** (gst-launch-1.0:6598): CRITICAL **: 16:03:22.868: Failed to load model
+
+failed to initialize the object: PyTorch
+** Message: 16:03:22.868: gpu = 0, accl = cpu
+
+** (gst-launch-1.0:6598): CRITICAL **: 16:03:22.871: Exception while loading the model: [enforce fail at inline_container.cc:208] . file not found: archive/constants.pkl
+frame #0: c10::ThrowEnforceNotMet(char const*, int, char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, void const*) + 0x68 (0x7fadbfd845b8 in /lib/libc10.so)
+frame #1: caffe2::serialize::PyTorchStreamReader::getRecordID(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xda (0x7fadbd84ff9a in /lib/libtorch_cpu.so)
+frame #2: caffe2::serialize::PyTorchStreamReader::getRecord(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0x3c (0x7fadbd84fffc in /lib/libtorch_cpu.so)
+frame #3: torch::jit::readArchiveAndTensors(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, c10::optional<std::function<c10::StrongTypePtr (c10::QualifiedName const&)> >, c10::optional<std::function<c10::intrusive_ptr<c10::ivalue::Object, c10::detail::intrusive_target_default_null_type<c10::ivalue::Object> > (c10::StrongTypePtr, c10::IValue)> >, c10::optional<c10::Device>, caffe2::serialize::PyTorchStreamReader&) + 0xab (0x7fadbea08fcb in /lib/libtorch_cpu.so)
+frame #4: <unknown function> + 0x34c36c9 (0x7fadbea096c9 in /lib/libtorch_cpu.so)
+frame #5: <unknown function> + 0x34c567b (0x7fadbea0b67b in /lib/libtorch_cpu.so)
+frame #6: torch::jit::load(std::unique_ptr<caffe2::serialize::ReadAdapterInterface, std::default_delete<caffe2::serialize::ReadAdapterInterface> >, c10::optional<c10::Device>, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >&) + 0x19b (0x7fadbea0c43b in /lib/libtorch_cpu.so)
+frame #7: torch::jit::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, c10::optional<c10::Device>, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >&) + 0x79 (0x7fadbea0db29 in /lib/libtorch_cpu.so)
+frame #8: TorchCore::loadModel() + 0x96 (0x7fadbfdab1e6 in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #9: TorchCore::init(_GstTensorFilterProperties const*) + 0x68 (0x7fadbfdab648 in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #10: <unknown function> + 0xa6fe (0x7fadbfdab6fe in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #11: gst_tensor_filter_common_open_fw + 0xd4 (0x7fadc000b424 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #12: gst_tensor_filter_load_tensor_info + 0x92 (0x7fadc000b7c2 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #13: <unknown function> + 0x3a022 (0x7fadc0007022 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #14: <unknown function> + 0x457d0 (0x7fadc03647d0 in /lib/x86_64-linux-gnu/libgstbase-1.0.so.0)
+frame #15: <unknown function> + 0x4aa55 (0x7fadc0369a55 in /lib/x86_64-linux-gnu/libgstbase-1.0.so.0)
+frame #16: gst_pad_query + 0x3c8 (0x7fadc1925b18 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #17: gst_pad_query_caps + 0xec (0x7fadc19615cc in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #18: <unknown function> + 0x79d37 (0x7fadc191cd37 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #19: gst_pad_link_full + 0x19a (0x7fadc192865a in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #20: <unknown function> + 0xbbbbe (0x7fadc195ebbe in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #21: gst_element_link_pads_full + 0xb99 (0x7fadc1962f29 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #22: gst_element_link_pads_filtered + 0x2a6 (0x7fadc1963816 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #23: <unknown function> + 0xdb575 (0x7fadc197e575 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #24: gst_parse_launch_full + 0xa4 (0x7fadc1974a44 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #25: gst_parse_launchv_full + 0x1cf (0x7fadc1974ccf in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #26: <unknown function> + 0x43f2 (0x55c773f403f2 in gst-launch-1.0)
+frame #27: __libc_start_main + 0xf3 (0x7fadc152c0b3 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #28: <unknown function> + 0x4d2e (0x55c773f40d2e in gst-launch-1.0)
+
+
+** (gst-launch-1.0:6598): CRITICAL **: 16:03:22.871: Failed to load model
+
+failed to initialize the object: PyTorch
+** Message: 16:03:22.872: gpu = 0, accl = cpu
+
+** (gst-launch-1.0:6598): CRITICAL **: 16:03:22.875: Exception while loading the model: [enforce fail at inline_container.cc:208] . file not found: archive/constants.pkl
+frame #0: c10::ThrowEnforceNotMet(char const*, int, char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, void const*) + 0x68 (0x7fadbfd845b8 in /lib/libc10.so)
+frame #1: caffe2::serialize::PyTorchStreamReader::getRecordID(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xda (0x7fadbd84ff9a in /lib/libtorch_cpu.so)
+frame #2: caffe2::serialize::PyTorchStreamReader::getRecord(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0x3c (0x7fadbd84fffc in /lib/libtorch_cpu.so)
+frame #3: torch::jit::readArchiveAndTensors(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, c10::optional<std::function<c10::StrongTypePtr (c10::QualifiedName const&)> >, c10::optional<std::function<c10::intrusive_ptr<c10::ivalue::Object, c10::detail::intrusive_target_default_null_type<c10::ivalue::Object> > (c10::StrongTypePtr, c10::IValue)> >, c10::optional<c10::Device>, caffe2::serialize::PyTorchStreamReader&) + 0xab (0x7fadbea08fcb in /lib/libtorch_cpu.so)
+frame #4: <unknown function> + 0x34c36c9 (0x7fadbea096c9 in /lib/libtorch_cpu.so)
+frame #5: <unknown function> + 0x34c567b (0x7fadbea0b67b in /lib/libtorch_cpu.so)
+frame #6: torch::jit::load(std::unique_ptr<caffe2::serialize::ReadAdapterInterface, std::default_delete<caffe2::serialize::ReadAdapterInterface> >, c10::optional<c10::Device>, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >&) + 0x19b (0x7fadbea0c43b in /lib/libtorch_cpu.so)
+frame #7: torch::jit::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, c10::optional<c10::Device>, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >&) + 0x79 (0x7fadbea0db29 in /lib/libtorch_cpu.so)
+frame #8: TorchCore::loadModel() + 0x96 (0x7fadbfdab1e6 in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #9: TorchCore::init(_GstTensorFilterProperties const*) + 0x68 (0x7fadbfdab648 in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #10: <unknown function> + 0xa6fe (0x7fadbfdab6fe in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #11: gst_tensor_filter_common_open_fw + 0xd4 (0x7fadc000b424 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #12: gst_tensor_filter_load_tensor_info + 0x1c8 (0x7fadc000b8f8 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #13: <unknown function> + 0x3a022 (0x7fadc0007022 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #14: <unknown function> + 0x457d0 (0x7fadc03647d0 in /lib/x86_64-linux-gnu/libgstbase-1.0.so.0)
+frame #15: <unknown function> + 0x4aa55 (0x7fadc0369a55 in /lib/x86_64-linux-gnu/libgstbase-1.0.so.0)
+frame #16: gst_pad_query + 0x3c8 (0x7fadc1925b18 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #17: gst_pad_query_caps + 0xec (0x7fadc19615cc in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #18: gst_element_get_compatible_pad + 0xa94 (0x7fadc1962154 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #19: gst_element_link_pads_full + 0xb65 (0x7fadc1962ef5 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #20: gst_element_link_pads_filtered + 0x2a6 (0x7fadc1963816 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #21: <unknown function> + 0xdb575 (0x7fadc197e575 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #22: gst_parse_launch_full + 0xa4 (0x7fadc1974a44 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #23: gst_parse_launchv_full + 0x1cf (0x7fadc1974ccf in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #24: <unknown function> + 0x43f2 (0x55c773f403f2 in gst-launch-1.0)
+frame #25: __libc_start_main + 0xf3 (0x7fadc152c0b3 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #26: <unknown function> + 0x4d2e (0x55c773f40d2e in gst-launch-1.0)
+
+
+** (gst-launch-1.0:6598): CRITICAL **: 16:03:22.875: Failed to load model
+
+failed to initialize the object: PyTorch
+** Message: 16:03:22.875: gpu = 0, accl = cpu
+
+** (gst-launch-1.0:6598): CRITICAL **: 16:03:22.878: Exception while loading the model: [enforce fail at inline_container.cc:208] . file not found: archive/constants.pkl
+frame #0: c10::ThrowEnforceNotMet(char const*, int, char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, void const*) + 0x68 (0x7fadbfd845b8 in /lib/libc10.so)
+frame #1: caffe2::serialize::PyTorchStreamReader::getRecordID(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xda (0x7fadbd84ff9a in /lib/libtorch_cpu.so)
+frame #2: caffe2::serialize::PyTorchStreamReader::getRecord(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0x3c (0x7fadbd84fffc in /lib/libtorch_cpu.so)
+frame #3: torch::jit::readArchiveAndTensors(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, c10::optional<std::function<c10::StrongTypePtr (c10::QualifiedName const&)> >, c10::optional<std::function<c10::intrusive_ptr<c10::ivalue::Object, c10::detail::intrusive_target_default_null_type<c10::ivalue::Object> > (c10::StrongTypePtr, c10::IValue)> >, c10::optional<c10::Device>, caffe2::serialize::PyTorchStreamReader&) + 0xab (0x7fadbea08fcb in /lib/libtorch_cpu.so)
+frame #4: <unknown function> + 0x34c36c9 (0x7fadbea096c9 in /lib/libtorch_cpu.so)
+frame #5: <unknown function> + 0x34c567b (0x7fadbea0b67b in /lib/libtorch_cpu.so)
+frame #6: torch::jit::load(std::unique_ptr<caffe2::serialize::ReadAdapterInterface, std::default_delete<caffe2::serialize::ReadAdapterInterface> >, c10::optional<c10::Device>, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >&) + 0x19b (0x7fadbea0c43b in /lib/libtorch_cpu.so)
+frame #7: torch::jit::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, c10::optional<c10::Device>, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >&) + 0x79 (0x7fadbea0db29 in /lib/libtorch_cpu.so)
+frame #8: TorchCore::loadModel() + 0x96 (0x7fadbfdab1e6 in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #9: TorchCore::init(_GstTensorFilterProperties const*) + 0x68 (0x7fadbfdab648 in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #10: <unknown function> + 0xa6fe (0x7fadbfdab6fe in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #11: gst_tensor_filter_common_open_fw + 0xd4 (0x7fadc000b424 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #12: gst_tensor_filter_load_tensor_info + 0x92 (0x7fadc000b7c2 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #13: <unknown function> + 0x3a022 (0x7fadc0007022 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #14: <unknown function> + 0x457d0 (0x7fadc03647d0 in /lib/x86_64-linux-gnu/libgstbase-1.0.so.0)
+frame #15: <unknown function> + 0x4aa55 (0x7fadc0369a55 in /lib/x86_64-linux-gnu/libgstbase-1.0.so.0)
+frame #16: gst_pad_query + 0x3c8 (0x7fadc1925b18 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #17: gst_pad_query_caps + 0xec (0x7fadc19615cc in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #18: gst_element_get_compatible_pad + 0xa94 (0x7fadc1962154 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #19: gst_element_link_pads_full + 0xb65 (0x7fadc1962ef5 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #20: gst_element_link_pads_filtered + 0x2a6 (0x7fadc1963816 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #21: <unknown function> + 0xdb575 (0x7fadc197e575 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #22: gst_parse_launch_full + 0xa4 (0x7fadc1974a44 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #23: gst_parse_launchv_full + 0x1cf (0x7fadc1974ccf in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #24: <unknown function> + 0x43f2 (0x55c773f403f2 in gst-launch-1.0)
+frame #25: __libc_start_main + 0xf3 (0x7fadc152c0b3 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #26: <unknown function> + 0x4d2e (0x55c773f40d2e in gst-launch-1.0)
+
+
+** (gst-launch-1.0:6598): CRITICAL **: 16:03:22.878: Failed to load model
+
+failed to initialize the object: PyTorch
+
+** (gst-launch-1.0:6598): WARNING **: 16:03:22.878: Given input info is invalid, cannot get output info.
+** Message: 16:03:22.878: gpu = 0, accl = cpu
+
+** (gst-launch-1.0:6598): CRITICAL **: 16:03:22.881: Exception while loading the model: [enforce fail at inline_container.cc:208] . file not found: archive/constants.pkl
+frame #0: c10::ThrowEnforceNotMet(char const*, int, char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, void const*) + 0x68 (0x7fadbfd845b8 in /lib/libc10.so)
+frame #1: caffe2::serialize::PyTorchStreamReader::getRecordID(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xda (0x7fadbd84ff9a in /lib/libtorch_cpu.so)
+frame #2: caffe2::serialize::PyTorchStreamReader::getRecord(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0x3c (0x7fadbd84fffc in /lib/libtorch_cpu.so)
+frame #3: torch::jit::readArchiveAndTensors(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, c10::optional<std::function<c10::StrongTypePtr (c10::QualifiedName const&)> >, c10::optional<std::function<c10::intrusive_ptr<c10::ivalue::Object, c10::detail::intrusive_target_default_null_type<c10::ivalue::Object> > (c10::StrongTypePtr, c10::IValue)> >, c10::optional<c10::Device>, caffe2::serialize::PyTorchStreamReader&) + 0xab (0x7fadbea08fcb in /lib/libtorch_cpu.so)
+frame #4: <unknown function> + 0x34c36c9 (0x7fadbea096c9 in /lib/libtorch_cpu.so)
+frame #5: <unknown function> + 0x34c567b (0x7fadbea0b67b in /lib/libtorch_cpu.so)
+frame #6: torch::jit::load(std::unique_ptr<caffe2::serialize::ReadAdapterInterface, std::default_delete<caffe2::serialize::ReadAdapterInterface> >, c10::optional<c10::Device>, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >&) + 0x19b (0x7fadbea0c43b in /lib/libtorch_cpu.so)
+frame #7: torch::jit::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, c10::optional<c10::Device>, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >&) + 0x79 (0x7fadbea0db29 in /lib/libtorch_cpu.so)
+frame #8: TorchCore::loadModel() + 0x96 (0x7fadbfdab1e6 in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #9: TorchCore::init(_GstTensorFilterProperties const*) + 0x68 (0x7fadbfdab648 in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #10: <unknown function> + 0xa6fe (0x7fadbfdab6fe in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #11: gst_tensor_filter_common_open_fw + 0xd4 (0x7fadc000b424 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #12: gst_tensor_filter_load_tensor_info + 0x1c8 (0x7fadc000b8f8 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #13: <unknown function> + 0x3a022 (0x7fadc0007022 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #14: <unknown function> + 0x457d0 (0x7fadc03647d0 in /lib/x86_64-linux-gnu/libgstbase-1.0.so.0)
+frame #15: <unknown function> + 0x4aa55 (0x7fadc0369a55 in /lib/x86_64-linux-gnu/libgstbase-1.0.so.0)
+frame #16: gst_pad_query + 0x3c8 (0x7fadc1925b18 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #17: gst_pad_query_caps + 0xec (0x7fadc19615cc in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #18: <unknown function> + 0x79d2a (0x7fadc191cd2a in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #19: gst_pad_link_full + 0x19a (0x7fadc192865a in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #20: <unknown function> + 0xbbbbe (0x7fadc195ebbe in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #21: gst_element_link_pads_full + 0xb99 (0x7fadc1962f29 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #22: gst_element_link_pads_filtered + 0x2a6 (0x7fadc1963816 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #23: <unknown function> + 0xdb575 (0x7fadc197e575 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #24: gst_parse_launch_full + 0xa4 (0x7fadc1974a44 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #25: gst_parse_launchv_full + 0x1cf (0x7fadc1974ccf in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #26: <unknown function> + 0x43f2 (0x55c773f403f2 in gst-launch-1.0)
+frame #27: __libc_start_main + 0xf3 (0x7fadc152c0b3 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #28: <unknown function> + 0x4d2e (0x55c773f40d2e in gst-launch-1.0)
+
+
+** (gst-launch-1.0:6598): CRITICAL **: 16:03:22.881: Failed to load model
+
+failed to initialize the object: PyTorch
+** Message: 16:03:22.881: gpu = 0, accl = cpu
+
+** (gst-launch-1.0:6598): CRITICAL **: 16:03:22.884: Exception while loading the model: [enforce fail at inline_container.cc:208] . file not found: archive/constants.pkl
+frame #0: c10::ThrowEnforceNotMet(char const*, int, char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, void const*) + 0x68 (0x7fadbfd845b8 in /lib/libc10.so)
+frame #1: caffe2::serialize::PyTorchStreamReader::getRecordID(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xda (0x7fadbd84ff9a in /lib/libtorch_cpu.so)
+frame #2: caffe2::serialize::PyTorchStreamReader::getRecord(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0x3c (0x7fadbd84fffc in /lib/libtorch_cpu.so)
+frame #3: torch::jit::readArchiveAndTensors(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, c10::optional<std::function<c10::StrongTypePtr (c10::QualifiedName const&)> >, c10::optional<std::function<c10::intrusive_ptr<c10::ivalue::Object, c10::detail::intrusive_target_default_null_type<c10::ivalue::Object> > (c10::StrongTypePtr, c10::IValue)> >, c10::optional<c10::Device>, caffe2::serialize::PyTorchStreamReader&) + 0xab (0x7fadbea08fcb in /lib/libtorch_cpu.so)
+frame #4: <unknown function> + 0x34c36c9 (0x7fadbea096c9 in /lib/libtorch_cpu.so)
+frame #5: <unknown function> + 0x34c567b (0x7fadbea0b67b in /lib/libtorch_cpu.so)
+frame #6: torch::jit::load(std::unique_ptr<caffe2::serialize::ReadAdapterInterface, std::default_delete<caffe2::serialize::ReadAdapterInterface> >, c10::optional<c10::Device>, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >&) + 0x19b (0x7fadbea0c43b in /lib/libtorch_cpu.so)
+frame #7: torch::jit::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, c10::optional<c10::Device>, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >&) + 0x79 (0x7fadbea0db29 in /lib/libtorch_cpu.so)
+frame #8: TorchCore::loadModel() + 0x96 (0x7fadbfdab1e6 in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #9: TorchCore::init(_GstTensorFilterProperties const*) + 0x68 (0x7fadbfdab648 in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #10: <unknown function> + 0xa6fe (0x7fadbfdab6fe in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #11: gst_tensor_filter_common_open_fw + 0xd4 (0x7fadc000b424 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #12: gst_tensor_filter_load_tensor_info + 0x92 (0x7fadc000b7c2 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #13: <unknown function> + 0x3a022 (0x7fadc0007022 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #14: <unknown function> + 0x457d0 (0x7fadc03647d0 in /lib/x86_64-linux-gnu/libgstbase-1.0.so.0)
+frame #15: <unknown function> + 0x4aa55 (0x7fadc0369a55 in /lib/x86_64-linux-gnu/libgstbase-1.0.so.0)
+frame #16: gst_pad_query + 0x3c8 (0x7fadc1925b18 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #17: gst_pad_query_caps + 0xec (0x7fadc19615cc in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #18: <unknown function> + 0x79d2a (0x7fadc191cd2a in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #19: gst_pad_link_full + 0x19a (0x7fadc192865a in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #20: <unknown function> + 0xbbbbe (0x7fadc195ebbe in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #21: gst_element_link_pads_full + 0xb99 (0x7fadc1962f29 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #22: gst_element_link_pads_filtered + 0x2a6 (0x7fadc1963816 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #23: <unknown function> + 0xdb575 (0x7fadc197e575 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #24: gst_parse_launch_full + 0xa4 (0x7fadc1974a44 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #25: gst_parse_launchv_full + 0x1cf (0x7fadc1974ccf in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #26: <unknown function> + 0x43f2 (0x55c773f403f2 in gst-launch-1.0)
+frame #27: __libc_start_main + 0xf3 (0x7fadc152c0b3 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #28: <unknown function> + 0x4d2e (0x55c773f40d2e in gst-launch-1.0)
+
+
+** (gst-launch-1.0:6598): CRITICAL **: 16:03:22.884: Failed to load model
+
+failed to initialize the object: PyTorch
+
+** (gst-launch-1.0:6598): WARNING **: 16:03:22.884: Given input info is invalid, cannot get output info.
+** Message: 16:03:22.884: gpu = 0, accl = cpu
+
+** (gst-launch-1.0:6598): CRITICAL **: 16:03:22.888: Exception while loading the model: [enforce fail at inline_container.cc:208] . file not found: archive/constants.pkl
+frame #0: c10::ThrowEnforceNotMet(char const*, int, char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, void const*) + 0x68 (0x7fadbfd845b8 in /lib/libc10.so)
+frame #1: caffe2::serialize::PyTorchStreamReader::getRecordID(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xda (0x7fadbd84ff9a in /lib/libtorch_cpu.so)
+frame #2: caffe2::serialize::PyTorchStreamReader::getRecord(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0x3c (0x7fadbd84fffc in /lib/libtorch_cpu.so)
+frame #3: torch::jit::readArchiveAndTensors(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, c10::optional<std::function<c10::StrongTypePtr (c10::QualifiedName const&)> >, c10::optional<std::function<c10::intrusive_ptr<c10::ivalue::Object, c10::detail::intrusive_target_default_null_type<c10::ivalue::Object> > (c10::StrongTypePtr, c10::IValue)> >, c10::optional<c10::Device>, caffe2::serialize::PyTorchStreamReader&) + 0xab (0x7fadbea08fcb in /lib/libtorch_cpu.so)
+frame #4: <unknown function> + 0x34c36c9 (0x7fadbea096c9 in /lib/libtorch_cpu.so)
+frame #5: <unknown function> + 0x34c567b (0x7fadbea0b67b in /lib/libtorch_cpu.so)
+frame #6: torch::jit::load(std::unique_ptr<caffe2::serialize::ReadAdapterInterface, std::default_delete<caffe2::serialize::ReadAdapterInterface> >, c10::optional<c10::Device>, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >&) + 0x19b (0x7fadbea0c43b in /lib/libtorch_cpu.so)
+frame #7: torch::jit::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, c10::optional<c10::Device>, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >&) + 0x79 (0x7fadbea0db29 in /lib/libtorch_cpu.so)
+frame #8: TorchCore::loadModel() + 0x96 (0x7fadbfdab1e6 in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #9: TorchCore::init(_GstTensorFilterProperties const*) + 0x68 (0x7fadbfdab648 in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #10: <unknown function> + 0xa6fe (0x7fadbfdab6fe in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #11: gst_tensor_filter_common_open_fw + 0xd4 (0x7fadc000b424 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #12: gst_tensor_filter_load_tensor_info + 0x1c8 (0x7fadc000b8f8 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #13: <unknown function> + 0x3a022 (0x7fadc0007022 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #14: <unknown function> + 0x457d0 (0x7fadc03647d0 in /lib/x86_64-linux-gnu/libgstbase-1.0.so.0)
+frame #15: <unknown function> + 0x4aa55 (0x7fadc0369a55 in /lib/x86_64-linux-gnu/libgstbase-1.0.so.0)
+frame #16: gst_pad_query + 0x3c8 (0x7fadc1925b18 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #17: gst_pad_peer_query + 0x34b (0x7fadc192627b in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #18: gst_pad_peer_query_caps + 0xec (0x7fadc1963c6c in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #19: <unknown function> + 0x4a94f (0x7fadc036994f in /lib/x86_64-linux-gnu/libgstbase-1.0.so.0)
+frame #20: gst_pad_query + 0x3c8 (0x7fadc1925b18 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #21: gst_pad_query_caps + 0xec (0x7fadc19615cc in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #22: gst_element_get_compatible_pad + 0x21a (0x7fadc19618da in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #23: gst_element_link_pads_full + 0xb65 (0x7fadc1962ef5 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #24: gst_element_link_pads_filtered + 0x2a6 (0x7fadc1963816 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #25: <unknown function> + 0xdb575 (0x7fadc197e575 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #26: gst_parse_launch_full + 0xa4 (0x7fadc1974a44 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #27: gst_parse_launchv_full + 0x1cf (0x7fadc1974ccf in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #28: <unknown function> + 0x43f2 (0x55c773f403f2 in gst-launch-1.0)
+frame #29: __libc_start_main + 0xf3 (0x7fadc152c0b3 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #30: <unknown function> + 0x4d2e (0x55c773f40d2e in gst-launch-1.0)
+
+
+** (gst-launch-1.0:6598): CRITICAL **: 16:03:22.888: Failed to load model
+
+failed to initialize the object: PyTorch
+** Message: 16:03:22.888: gpu = 0, accl = cpu
+
+** (gst-launch-1.0:6598): CRITICAL **: 16:03:22.891: Exception while loading the model: [enforce fail at inline_container.cc:208] . file not found: archive/constants.pkl
+frame #0: c10::ThrowEnforceNotMet(char const*, int, char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, void const*) + 0x68 (0x7fadbfd845b8 in /lib/libc10.so)
+frame #1: caffe2::serialize::PyTorchStreamReader::getRecordID(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xda (0x7fadbd84ff9a in /lib/libtorch_cpu.so)
+frame #2: caffe2::serialize::PyTorchStreamReader::getRecord(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0x3c (0x7fadbd84fffc in /lib/libtorch_cpu.so)
+frame #3: torch::jit::readArchiveAndTensors(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, c10::optional<std::function<c10::StrongTypePtr (c10::QualifiedName const&)> >, c10::optional<std::function<c10::intrusive_ptr<c10::ivalue::Object, c10::detail::intrusive_target_default_null_type<c10::ivalue::Object> > (c10::StrongTypePtr, c10::IValue)> >, c10::optional<c10::Device>, caffe2::serialize::PyTorchStreamReader&) + 0xab (0x7fadbea08fcb in /lib/libtorch_cpu.so)
+frame #4: <unknown function> + 0x34c36c9 (0x7fadbea096c9 in /lib/libtorch_cpu.so)
+frame #5: <unknown function> + 0x34c567b (0x7fadbea0b67b in /lib/libtorch_cpu.so)
+frame #6: torch::jit::load(std::unique_ptr<caffe2::serialize::ReadAdapterInterface, std::default_delete<caffe2::serialize::ReadAdapterInterface> >, c10::optional<c10::Device>, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >&) + 0x19b (0x7fadbea0c43b in /lib/libtorch_cpu.so)
+frame #7: torch::jit::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, c10::optional<c10::Device>, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >&) + 0x79 (0x7fadbea0db29 in /lib/libtorch_cpu.so)
+frame #8: TorchCore::loadModel() + 0x96 (0x7fadbfdab1e6 in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #9: TorchCore::init(_GstTensorFilterProperties const*) + 0x68 (0x7fadbfdab648 in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #10: <unknown function> + 0xa6fe (0x7fadbfdab6fe in /usr/lib/nnstreamer/filters/libnnstreamer_filter_pytorch.so)
+frame #11: gst_tensor_filter_common_open_fw + 0xd4 (0x7fadc000b424 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #12: gst_tensor_filter_load_tensor_info + 0x92 (0x7fadc000b7c2 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #13: <unknown function> + 0x3a022 (0x7fadc0007022 in /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnnstreamer.so)
+frame #14: <unknown function> + 0x457d0 (0x7fadc03647d0 in /lib/x86_64-linux-gnu/libgstbase-1.0.so.0)
+frame #15: <unknown function> + 0x4aa55 (0x7fadc0369a55 in /lib/x86_64-linux-gnu/libgstbase-1.0.so.0)
+frame #16: gst_pad_query + 0x3c8 (0x7fadc1925b18 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #17: gst_pad_peer_query + 0x34b (0x7fadc192627b in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #18: gst_pad_peer_query_caps + 0xec (0x7fadc1963c6c in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #19: <unknown function> + 0x4a94f (0x7fadc036994f in /lib/x86_64-linux-gnu/libgstbase-1.0.so.0)
+frame #20: gst_pad_query + 0x3c8 (0x7fadc1925b18 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #21: gst_pad_query_caps + 0xec (0x7fadc19615cc in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #22: gst_element_get_compatible_pad + 0x21a (0x7fadc19618da in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #23: gst_element_link_pads_full + 0xb65 (0x7fadc1962ef5 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #24: gst_element_link_pads_filtered + 0x2a6 (0x7fadc1963816 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #25: <unknown function> + 0xdb575 (0x7fadc197e575 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #26: gst_parse_launch_full + 0xa4 (0x7fadc1974a44 in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #27: gst_parse_launchv_full + 0x1cf (0x7fadc1974ccf in /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0)
+frame #28: <unknown function> + 0x43f2 (0x55c773f403f2 in gst-launch-1.0)
+frame #29: __libc_start_main + 0xf3 (0x7fadc152c0b3 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #30: <unknown function> + 0x4d2e (0x55c773f40d2e in gst-launch-1.0)
+
+
+** (gst-launch-1.0:6598): CRITICAL **: 16:03:22.891: Failed to load model
+
+failed to initialize the object: PyTorch
+
+** (gst-launch-1.0:6598): WARNING **: 16:03:22.891: Given input info is invalid, cannot get output info.
+WARNING: erroneous pipeline: could not link tensordec0 to mix
