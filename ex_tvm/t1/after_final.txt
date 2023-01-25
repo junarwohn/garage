@@ -1,0 +1,58 @@
+[13:49:30] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1031: Dump of group info:
+#[version = "0.0.5"]
+fn (%data: Tensor[(1, 3, 224, 224), float32] /* group=0x555daefc1f28 */) -> Tensor[(1, 1000), float32] {
+  %0 = nn.conv2d(%data, meta[relay.Constant][0] /* group=0x555daefc1f50 */, padding=[1, 1, 1, 1], channels=64, kernel_size=[3, 3]) /* group=0x555daefc1f78 */;
+  %1 = add(%0, meta[relay.Constant][1] /* group=0x555daefc1fa0 */) /* group=0x555daefc1fc8 */;
+  %2 = nn.relu(%1) /* group=0x555daefc1ff0 */;
+  %3 = nn.contrib_conv2d_winograd_without_weight_transform(%2, meta[relay.Constant][2] /* group=0x555daefc2018 */, tile_size=4, padding=[1, 1, 1, 1], channels=64, kernel_size=[3, 3]) /* group=0x555daefc2040 */;
+  %4 = add(%3, meta[relay.Constant][3] /* group=0x555daefc2068 */) /* group=0x555daefc2090 */;
+  %5 = nn.relu(%4) /* group=0x555daefc20b8 */;
+  %6 = nn.max_pool2d(%5, pool_size=[2, 2], strides=[2, 2], padding=[0, 0, 0, 0]) /* group=0x555daefc20e0 */;
+  %7 = nn.contrib_conv2d_winograd_without_weight_transform(%6, meta[relay.Constant][4] /* group=0x555daefc2108 */, tile_size=4, padding=[1, 1, 1, 1], channels=128, kernel_size=[3, 3]) /* group=0x555daefc2130 */;
+  %8 = add(%7, meta[relay.Constant][5] /* group=0x555daefc2158 */) /* group=0x555daefc2180 */;
+  %9 = nn.relu(%8) /* group=0x555daefc21a8 */;
+  %10 = nn.contrib_conv2d_winograd_without_weight_transform(%9, meta[relay.Constant][6] /* group=0x555daefc21d0 */, tile_size=4, padding=[1, 1, 1, 1], channels=128, kernel_size=[3, 3]) /* group=0x555daefc21f8 */;
+  %11 = add(%10, meta[relay.Constant][7] /* group=0x555daefc2220 */) /* group=0x555daefc2248 */;
+  %12 = nn.relu(%11) /* group=0x555daefc2270 */;
+  %13 = nn.max_pool2d(%12, pool_size=[2, 2], strides=[2, 2], padding=[0, 0, 0, 0]) /* group=0x555daefc2298 */;
+  %14 = nn.contrib_conv2d_winograd_without_weight_transform(%13, meta[relay.Constant][8] /* group=0x555daefc22c0 */, tile_size=4, padding=[1, 1, 1, 1], channels=256, kernel_size=[3, 3]) /* group=0x555daefc22e8 */;
+  %15 = add(%14, meta[relay.Constant][9] /* group=0x555daefc2310 */) /* group=0x555daefc2338 */;
+  %16 = nn.relu(%15) /* group=0x555daefc2360 */;
+  %17 = nn.contrib_conv2d_winograd_without_weight_transform(%16, meta[relay.Constant][10] /* group=0x555daefc2388 */, tile_size=4, padding=[1, 1, 1, 1], channels=256, kernel_size=[3, 3]) /* group=0x555daefc23b0 */;
+  %18 = add(%17, meta[relay.Constant][11] /* group=0x555daefc23d8 */) /* group=0x555daefc2400 */;
+  %19 = nn.relu(%18) /* group=0x555daefc2428 */;
+  %20 = nn.contrib_conv2d_winograd_without_weight_transform(%19, meta[relay.Constant][12] /* group=0x555daefc2450 */, tile_size=4, padding=[1, 1, 1, 1], channels=256, kernel_size=[3, 3]) /* group=0x555daefc2478 */;
+  %21 = add(%20, meta[relay.Constant][13] /* group=0x555daefc24a0 */) /* group=0x555daefc24c8 */;
+  %22 = nn.relu(%21) /* group=0x555daefc24f0 */;
+  %23 = nn.max_pool2d(%22, pool_size=[2, 2], strides=[2, 2], padding=[0, 0, 0, 0]) /* group=0x555daefc2518 */;
+  %24 = nn.contrib_conv2d_winograd_without_weight_transform(%23, meta[relay.Constant][14] /* group=0x555daefc2540 */, tile_size=2, padding=[1, 1, 1, 1], channels=512, kernel_size=[3, 3]) /* group=0x555daefc2568 */;
+  %25 = add(%24, meta[relay.Constant][15] /* group=0x555daefc2590 */) /* group=0x555daefc25b8 */;
+  %26 = nn.relu(%25) /* group=0x555daefc25e0 */;
+  %27 = nn.contrib_conv2d_winograd_without_weight_transform(%26, meta[relay.Constant][16] /* group=0x555daefc2608 */, tile_size=2, padding=[1, 1, 1, 1], channels=512, kernel_size=[3, 3]) /* group=0x555daefc2630 */;
+  %28 = add(%27, meta[relay.Constant][17] /* group=0x555daefc2658 */) /* group=0x555daefc2680 */;
+  %29 = nn.relu(%28) /* group=0x555daefc26a8 */;
+  %30 = nn.contrib_conv2d_winograd_without_weight_transform(%29, meta[relay.Constant][18] /* group=0x555daefc26d0 */, tile_size=2, padding=[1, 1, 1, 1], channels=512, kernel_size=[3, 3]) /* group=0x555daefc26f8 */;
+  %31 = add(%30, meta[relay.Constant][19] /* group=0x555daefc2720 */) /* group=0x555daefc2748 */;
+  %32 = nn.relu(%31) /* group=0x555daefc2770 */;
+  %33 = nn.max_pool2d(%32, pool_size=[2, 2], strides=[2, 2], padding=[0, 0, 0, 0]) /* group=0x555daefc2798 */;
+  %34 = nn.contrib_conv2d_winograd_without_weight_transform(%33, meta[relay.Constant][20] /* group=0x555daefc27c0 */, tile_size=2, padding=[1, 1, 1, 1], channels=512, kernel_size=[3, 3]) /* group=0x555daefc27e8 */;
+  %35 = add(%34, meta[relay.Constant][21] /* group=0x555daefc2810 */) /* group=0x555daefc2838 */;
+  %36 = nn.relu(%35) /* group=0x555daefc2860 */;
+  %37 = nn.contrib_conv2d_winograd_without_weight_transform(%36, meta[relay.Constant][22] /* group=0x555daefc2888 */, tile_size=2, padding=[1, 1, 1, 1], channels=512, kernel_size=[3, 3]) /* group=0x555daefc28b0 */;
+  %38 = add(%37, meta[relay.Constant][23] /* group=0x555daefc28d8 */) /* group=0x555daefc2900 */;
+  %39 = nn.relu(%38) /* group=0x555daefc2928 */;
+  %40 = nn.contrib_conv2d_winograd_without_weight_transform(%39, meta[relay.Constant][24] /* group=0x555daefc2950 */, tile_size=2, padding=[1, 1, 1, 1], channels=512, kernel_size=[3, 3]) /* group=0x555daefc2978 */;
+  %41 = add(%40, meta[relay.Constant][25] /* group=0x555daefc29a0 */) /* group=0x555daefc29c8 */;
+  %42 = nn.relu(%41) /* group=0x555daefc29f0 */;
+  %43 = nn.max_pool2d(%42, pool_size=[2, 2], strides=[2, 2], padding=[0, 0, 0, 0]) /* group=0x555daefc2a18 */;
+  %44 = nn.batch_flatten(%43) /* group=0x555daefc2a40 */;
+  %45 = nn.dense(%44, meta[relay.Constant][26] /* group=0x555daefc2a68 */, units=4096) /* group=0x555daefc2a90 */;
+  %46 = add(%45, meta[relay.Constant][27] /* group=0x555daefc2ab8 */) /* group=0x555daefc2ae0 */;
+  %47 = nn.relu(%46) /* group=0x555daefc2b08 */;
+  %48 = nn.dense(%47, meta[relay.Constant][28] /* group=0x555daefc2b30 */, units=4096) /* group=0x555daefc2b58 */;
+  %49 = add(%48, meta[relay.Constant][29] /* group=0x555daefc2b80 */) /* group=0x555daefc2ba8 */;
+  %50 = nn.relu(%49) /* group=0x555daefc2bd0 */;
+  %51 = nn.dense(%50, meta[relay.Constant][30] /* group=0x555daefc2bf8 */, units=1000) /* group=0x555daefc2c20 */;
+  %52 = add(%51, meta[relay.Constant][31] /* group=0x555daefc2c48 */) /* group=0x555daefc2c70 */;
+  nn.softmax(%52) /* group=0x555daefc2c98 */
+}

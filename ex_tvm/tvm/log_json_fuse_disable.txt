@@ -1,0 +1,132 @@
+File /home/j/.tvm_test_data/data/cat.png exists, skip.
+#[version = "0.0.5"]
+def @main(%input_1: Tensor[(1, 3, 256, 256), float32], %v_param_1: Tensor[(16, 3, 3, 3), float32], %v_param_2: Tensor[(16), float32]) {
+  %0 = nn.conv2d(%input_1, %v_param_1, padding=[1, 1, 1, 1], channels=16, kernel_size=[3, 3]);
+  %1 = nn.bias_add(%0, %v_param_2);
+  nn.max_pool2d(%1, pool_size=[2, 2], strides=[2, 2], padding=[0, 0, 0, 0])
+}
+
+{
+  "nodes": [
+    {
+      "op": "null", 
+      "name": "input_1", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p0", 
+      "inputs": []
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "tvmgen_default_fused_nn_conv2d", 
+      "attrs": {
+        "num_outputs": "1", 
+        "flatten_data": "0", 
+        "out_layout": "", 
+        "func_name": "tvmgen_default_fused_nn_conv2d", 
+        "hash": "127ca854e2dbdd9e", 
+        "num_inputs": "2", 
+        "kernel_layout": "OIHW", 
+        "data_layout": "NCHW"
+      }, 
+      "inputs": [
+        [
+          0, 
+          0, 
+          0
+        ], 
+        [
+          1, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "null", 
+      "name": "p1", 
+      "inputs": []
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "tvmgen_default_fused_add", 
+      "attrs": {
+        "num_inputs": "2", 
+        "num_outputs": "1", 
+        "hash": "2ef207a3d2c64a2f", 
+        "flatten_data": "0", 
+        "func_name": "tvmgen_default_fused_add"
+      }, 
+      "inputs": [
+        [
+          2, 
+          0, 
+          0
+        ], 
+        [
+          3, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "tvmgen_default_fused_nn_max_pool2d", 
+      "attrs": {
+        "num_outputs": "1", 
+        "layout": "NCHW", 
+        "func_name": "tvmgen_default_fused_nn_max_pool2d", 
+        "flatten_data": "0", 
+        "hash": "6a1842ec1de4993d", 
+        "num_inputs": "1"
+      }, 
+      "inputs": [
+        [
+          4, 
+          0, 
+          0
+        ]
+      ]
+    }
+  ], 
+  "arg_nodes": [0, 1, 3], 
+  "heads": [
+    [
+      5, 
+      0, 
+      0
+    ]
+  ], 
+  "attrs": {
+    "dltype": [
+      "list_str", 
+      [
+        "float32", 
+        "float32", 
+        "float32", 
+        "float32", 
+        "float32", 
+        "float32"
+      ]
+    ], 
+    "shape": [
+      "list_shape", 
+      [
+        [1, 3, 256, 256], 
+        [16, 3, 3, 3], 
+        [1, 16, 256, 256], 
+        [1, 16, 1, 1], 
+        [1, 16, 256, 256], 
+        [1, 16, 128, 128]
+      ]
+    ], 
+    "storage_id": [
+      "list_int", 
+      [0, 1, 2, 3, 4, 2]
+    ]
+  }, 
+  "node_row_ptr": [0, 1, 2, 3, 4, 5, 6]
+}

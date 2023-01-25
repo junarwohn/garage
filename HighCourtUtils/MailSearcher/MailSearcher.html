@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta 
+        name='viewport' 
+        content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' 
+        />
+        <script src="MailSearcher.js"></script>
+        <style>
+            /* body{
+                display: inline;
+                margin: 0px;
+                padding: 0px;
+            } */
+            .judgeList{
+                float: left;
+                box-shadow: 0 0 0 1px black inset;          
+                width: 70%;
+                /* height: 100%; */
+
+            }
+            .inputBox {
+                float: left;
+                box-shadow: 0 0 0 1px black inset;          
+                width: 25%;
+            }
+            /* br {
+                
+            } */
+        </style>
+    </head>
+    <body>
+        <div>
+                <div class="judgeList" id="judgeList">CHARM-GONGIK</div>
+                <div class="inputBox">
+                <input type="text" id="myInput" oninput="searchJudge()">
+                <button type="button" id="clearButton" onclick="clearSearch()" ></button>
+            </div>
+        </div>
+    </body>
+</html>

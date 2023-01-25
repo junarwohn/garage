@@ -1,0 +1,50 @@
+"source $VIMRUNTIME/vimrc_example.vim
+"source $VIMRUNTIME/mswin.vim
+"behave mswin
+"
+"set diffexpr=MyDiff()
+"function MyDiff()
+"  let opt = '-a --binary '
+"  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+"  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+"  let arg1 = v:fname_in
+"  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+"  let arg2 = v:fname_new
+"  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+"  let arg3 = v:fname_out
+"  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+"  if $VIMRUNTIME =~ ' '
+"    if &sh =~ '\<cmd'
+"      if empty(&shellxquote)
+"        let l:shxq_sav = ''
+"        set shellxquote&
+"      endif
+"      let cmd = '"' . $VIMRUNTIME . '\diff"'
+"    else
+"      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+"    endif
+"  else
+"    let cmd = $VIMRUNTIME . '\diff'
+"  endif
+"  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
+"  if exists('l:shxq_sav')
+"    let &shellxquote=l:shxq_sav
+"  endif
+"endfunction
+
+set hlsearch " 검색어 하이라이팅
+set nu " 줄번호
+set autoindent " 자동 들여쓰기
+set scrolloff=2
+set wildmode=longest,list
+set ts=4 "tag select
+set sts=4 "st select
+set sw=1 " 스크롤바 너비
+set autowrite " 다른 파일로 넘어갈 때 자동 저장
+set autoread " 작업 중인 파일 외부에서 변경됬을 경우 자동으로 불러옴
+set cindent " C언어 자동 들여쓰기
+set bs=eol,start,indent
+set history=256
+set laststatus=2 " 상태바 표시 항상
+"set paste " 붙여넣기 계단현상 없애기
+set shiftwidth=4 " 자동 들여쓰기 너비 설정

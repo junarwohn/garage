@@ -1,0 +1,4 @@
+C[1995] : 964455360.000000
+Execution time: 0.066764 sec
+result : PASSED
+0

@@ -1,0 +1,10 @@
+[
+	{
+		"chat_id": "YOUR_ID",
+		"birth" : "YOUR_BIRTH"
+	},
+	{
+		"chat_id": "ANOTHER_ID",
+		"birth" : "ANOTHER_BIRTH"
+	}
+]

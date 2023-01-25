@@ -1,0 +1,1 @@
+python3 NNMask.py --input_height=512 --input_width=512 --model=./data/unet_tvm_cpu_512.so

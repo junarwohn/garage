@@ -1,0 +1,513 @@
+[15:38:20] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(64, 1, 1), float32] {
+  expand_dims(meta[relay.Constant][0] /* group=0x55cc869f3cd0 */, axis=1, num_newaxis=2) /* group=0x55cc869f3cf8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:20] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(1, 64, 1, 1), float32] {
+  expand_dims(meta[relay.Constant][0] /* group=0x55cc86c0b4d0 */, axis=0) /* group=0x55cc86c0b4f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:20] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(6, 6, 64, 64), float32] {
+  nn.contrib_conv2d_winograd_weight_transform(meta[relay.Constant][0] /* group=0x55cc86c554d0 */, tile_size=4) /* group=0x55cc86c554f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:20] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(6, 6, 64, 64), float32] {
+  transpose(meta[relay.Constant][0] /* group=0x55cc86c554d0 */, axes=[0, 1, 3, 2]) /* group=0x55cc86c554f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:20] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(64, 1, 1), float32] {
+  expand_dims(meta[relay.Constant][0] /* group=0x55cc8729f8d0 */, axis=1, num_newaxis=2) /* group=0x55cc8729f8f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:20] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(1, 64, 1, 1), float32] {
+  expand_dims(meta[relay.Constant][0] /* group=0x55cc8729f8d0 */, axis=0) /* group=0x55cc8729f8f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:20] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(6, 6, 128, 64), float32] {
+  nn.contrib_conv2d_winograd_weight_transform(meta[relay.Constant][0] /* group=0x55cc8729f8d0 */, tile_size=4) /* group=0x55cc8729f8f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:21] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(6, 6, 64, 128), float32] {
+  transpose(meta[relay.Constant][0] /* group=0x55cc8750b0d0 */, axes=[0, 1, 3, 2]) /* group=0x55cc8750b0f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:21] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(128, 1, 1), float32] {
+  expand_dims(meta[relay.Constant][0] /* group=0x55cc876f44d0 */, axis=1, num_newaxis=2) /* group=0x55cc876f44f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:21] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(1, 128, 1, 1), float32] {
+  expand_dims(meta[relay.Constant][0] /* group=0x55cc874860d0 */, axis=0) /* group=0x55cc874860f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:21] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(6, 6, 128, 128), float32] {
+  nn.contrib_conv2d_winograd_weight_transform(meta[relay.Constant][0] /* group=0x55cc87ccd0d0 */, tile_size=4) /* group=0x55cc87ccd0f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:21] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(6, 6, 128, 128), float32] {
+  transpose(meta[relay.Constant][0] /* group=0x55cc87db68d0 */, axes=[0, 1, 3, 2]) /* group=0x55cc87db68f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:21] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(128, 1, 1), float32] {
+  expand_dims(meta[relay.Constant][0] /* group=0x55cc87db68d0 */, axis=1, num_newaxis=2) /* group=0x55cc87db68f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:21] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(1, 128, 1, 1), float32] {
+  expand_dims(meta[relay.Constant][0] /* group=0x55cc87db68d0 */, axis=0) /* group=0x55cc87db68f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:21] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(6, 6, 256, 128), float32] {
+  nn.contrib_conv2d_winograd_weight_transform(meta[relay.Constant][0] /* group=0x55cc87db68d0 */, tile_size=4) /* group=0x55cc87db68f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:21] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(6, 6, 128, 256), float32] {
+  transpose(meta[relay.Constant][0] /* group=0x55cc87db68d0 */, axes=[0, 1, 3, 2]) /* group=0x55cc87db68f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:21] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(256, 1, 1), float32] {
+  expand_dims(meta[relay.Constant][0] /* group=0x55cc884720d0 */, axis=1, num_newaxis=2) /* group=0x55cc884720f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:21] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(1, 256, 1, 1), float32] {
+  expand_dims(meta[relay.Constant][0] /* group=0x55cc8b1a20d0 */, axis=0) /* group=0x55cc8b1a20f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:21] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(6, 6, 256, 256), float32] {
+  nn.contrib_conv2d_winograd_weight_transform(meta[relay.Constant][0] /* group=0x55cc883fa0d0 */, tile_size=4) /* group=0x55cc883fa0f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:21] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(6, 6, 256, 256), float32] {
+  transpose(meta[relay.Constant][0] /* group=0x55cc8b3674d0 */, axes=[0, 1, 3, 2]) /* group=0x55cc8b3674f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:21] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(256, 1, 1), float32] {
+  expand_dims(meta[relay.Constant][0] /* group=0x55cc8b2f6cd0 */, axis=1, num_newaxis=2) /* group=0x55cc8b2f6cf8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:21] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(1, 256, 1, 1), float32] {
+  expand_dims(meta[relay.Constant][0] /* group=0x55cc8b2f6cd0 */, axis=0) /* group=0x55cc8b2f6cf8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:21] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(6, 6, 256, 256), float32] {
+  nn.contrib_conv2d_winograd_weight_transform(meta[relay.Constant][0] /* group=0x55cc8b2f6cd0 */, tile_size=4) /* group=0x55cc8b2f6cf8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:21] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(6, 6, 256, 256), float32] {
+  transpose(meta[relay.Constant][0] /* group=0x55cc8b2f6cd0 */, axes=[0, 1, 3, 2]) /* group=0x55cc8b2f6cf8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:21] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(256, 1, 1), float32] {
+  expand_dims(meta[relay.Constant][0] /* group=0x55cc8b2f6cd0 */, axis=1, num_newaxis=2) /* group=0x55cc8b2f6cf8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:21] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(1, 256, 1, 1), float32] {
+  expand_dims(meta[relay.Constant][0] /* group=0x55cc8b2f6cd0 */, axis=0) /* group=0x55cc8b2f6cf8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:21] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(4, 4, 512, 256), float32] {
+  nn.contrib_conv2d_winograd_weight_transform(meta[relay.Constant][0] /* group=0x55cc8b2f6cd0 */, tile_size=2) /* group=0x55cc8b2f6cf8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:22] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(4, 4, 256, 512), float32] {
+  transpose(meta[relay.Constant][0] /* group=0x55cc8c05d8d0 */, axes=[0, 1, 3, 2]) /* group=0x55cc8c05d8f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:22] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(512, 1, 1), float32] {
+  expand_dims(meta[relay.Constant][0] /* group=0x55cc8c0208d0 */, axis=1, num_newaxis=2) /* group=0x55cc8c0208f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:22] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(1, 512, 1, 1), float32] {
+  expand_dims(meta[relay.Constant][0] /* group=0x55cc8c0eb8d0 */, axis=0) /* group=0x55cc8c0eb8f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:22] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(4, 4, 512, 512), float32] {
+  nn.contrib_conv2d_winograd_weight_transform(meta[relay.Constant][0] /* group=0x55cc901d2cd0 */, tile_size=2) /* group=0x55cc901d2cf8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:22] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(4, 4, 512, 512), float32] {
+  transpose(meta[relay.Constant][0] /* group=0x55cc8be1f0d0 */, axes=[0, 1, 3, 2]) /* group=0x55cc8be1f0f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:22] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(512, 1, 1), float32] {
+  expand_dims(meta[relay.Constant][0] /* group=0x55cc8bd504d0 */, axis=1, num_newaxis=2) /* group=0x55cc8bd504f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:22] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(1, 512, 1, 1), float32] {
+  expand_dims(meta[relay.Constant][0] /* group=0x55cc8bd504d0 */, axis=0) /* group=0x55cc8bd504f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:22] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(4, 4, 512, 512), float32] {
+  nn.contrib_conv2d_winograd_weight_transform(meta[relay.Constant][0] /* group=0x55cc8bd504d0 */, tile_size=2) /* group=0x55cc8bd504f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:22] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(4, 4, 512, 512), float32] {
+  transpose(meta[relay.Constant][0] /* group=0x55cc8bd504d0 */, axes=[0, 1, 3, 2]) /* group=0x55cc8bd504f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:22] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(512, 1, 1), float32] {
+  expand_dims(meta[relay.Constant][0] /* group=0x55cc8bd504d0 */, axis=1, num_newaxis=2) /* group=0x55cc8bd504f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:22] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(1, 512, 1, 1), float32] {
+  expand_dims(meta[relay.Constant][0] /* group=0x55cc8bd504d0 */, axis=0) /* group=0x55cc8bd504f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:22] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(4, 4, 512, 512), float32] {
+  nn.contrib_conv2d_winograd_weight_transform(meta[relay.Constant][0] /* group=0x55cc8bd504d0 */, tile_size=2) /* group=0x55cc8bd504f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:22] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(4, 4, 512, 512), float32] {
+  transpose(meta[relay.Constant][0] /* group=0x55cc8bd504d0 */, axes=[0, 1, 3, 2]) /* group=0x55cc8bd504f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:22] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(512, 1, 1), float32] {
+  expand_dims(meta[relay.Constant][0] /* group=0x55cc8bd504d0 */, axis=1, num_newaxis=2) /* group=0x55cc8bd504f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:22] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(1, 512, 1, 1), float32] {
+  expand_dims(meta[relay.Constant][0] /* group=0x55cc8bd504d0 */, axis=0) /* group=0x55cc8bd504f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:22] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(4, 4, 512, 512), float32] {
+  nn.contrib_conv2d_winograd_weight_transform(meta[relay.Constant][0] /* group=0x55cc8bd504d0 */, tile_size=2) /* group=0x55cc8bd504f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:22] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(4, 4, 512, 512), float32] {
+  transpose(meta[relay.Constant][0] /* group=0x55cc8bd504d0 */, axes=[0, 1, 3, 2]) /* group=0x55cc8bd504f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:22] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(512, 1, 1), float32] {
+  expand_dims(meta[relay.Constant][0] /* group=0x55cc8bd504d0 */, axis=1, num_newaxis=2) /* group=0x55cc8bd504f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:22] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(1, 512, 1, 1), float32] {
+  expand_dims(meta[relay.Constant][0] /* group=0x55cc8bd504d0 */, axis=0) /* group=0x55cc8bd504f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:22] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(4, 4, 512, 512), float32] {
+  nn.contrib_conv2d_winograd_weight_transform(meta[relay.Constant][0] /* group=0x55cc8bd504d0 */, tile_size=2) /* group=0x55cc8bd504f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:22] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(4, 4, 512, 512), float32] {
+  transpose(meta[relay.Constant][0] /* group=0x55cc8bd504d0 */, axes=[0, 1, 3, 2]) /* group=0x55cc8bd504f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:22] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(512, 1, 1), float32] {
+  expand_dims(meta[relay.Constant][0] /* group=0x55cc8bd504d0 */, axis=1, num_newaxis=2) /* group=0x55cc8bd504f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:22] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn () -> Tensor[(1, 512, 1, 1), float32] {
+  expand_dims(meta[relay.Constant][0] /* group=0x55cc8bd504d0 */, axis=0) /* group=0x55cc8bd504f8 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+[15:38:22] /home/j/tvm-tuned/src/relay/transforms/fuse_ops.cc:1034: Dump of group info:
+#[version = "0.0.5"]
+fn (%data: Tensor[(1, 3, 224, 224), float32] /* group=0x55cc8bd51b28 */) -> Tensor[(1, 1000), float32] {
+  %0 = nn.conv2d(%data, meta[relay.Constant][0] /* group=0x55cc8bd51b50 */, padding=[1, 1, 1, 1], channels=64, kernel_size=[3, 3]) /* group=0x55cc8bd51b78 */;
+  %1 = add(%0, meta[relay.Constant][1] /* group=0x55cc8bd51ba0 */) /* group=0x55cc8bd51bc8 */;
+  %2 = nn.relu(%1) /* group=0x55cc8bd51bf0 */;
+  %3 = nn.contrib_conv2d_winograd_without_weight_transform(%2, meta[relay.Constant][2] /* group=0x55cc8bd51c18 */, tile_size=4, padding=[1, 1, 1, 1], channels=64, kernel_size=[3, 3]) /* group=0x55cc8bd51c40 */;
+  %4 = add(%3, meta[relay.Constant][3] /* group=0x55cc8bd51c68 */) /* group=0x55cc8bd51c90 */;
+  %5 = nn.relu(%4) /* group=0x55cc8bd51cb8 */;
+  %6 = nn.max_pool2d(%5, pool_size=[2, 2], strides=[2, 2], padding=[0, 0, 0, 0]) /* group=0x55cc8bd51ce0 */;
+  %7 = nn.contrib_conv2d_winograd_without_weight_transform(%6, meta[relay.Constant][4] /* group=0x55cc8bd51d08 */, tile_size=4, padding=[1, 1, 1, 1], channels=128, kernel_size=[3, 3]) /* group=0x55cc8bd51d30 */;
+  %8 = add(%7, meta[relay.Constant][5] /* group=0x55cc8bd51d58 */) /* group=0x55cc8bd51d80 */;
+  %9 = nn.relu(%8) /* group=0x55cc8bd51da8 */;
+  %10 = nn.contrib_conv2d_winograd_without_weight_transform(%9, meta[relay.Constant][6] /* group=0x55cc8bd51dd0 */, tile_size=4, padding=[1, 1, 1, 1], channels=128, kernel_size=[3, 3]) /* group=0x55cc8bd51df8 */;
+  %11 = add(%10, meta[relay.Constant][7] /* group=0x55cc8bd51e20 */) /* group=0x55cc8bd51e48 */;
+  %12 = nn.relu(%11) /* group=0x55cc8bd51e70 */;
+  %13 = nn.max_pool2d(%12, pool_size=[2, 2], strides=[2, 2], padding=[0, 0, 0, 0]) /* group=0x55cc8bd51e98 */;
+  %14 = nn.contrib_conv2d_winograd_without_weight_transform(%13, meta[relay.Constant][8] /* group=0x55cc8bd51ec0 */, tile_size=4, padding=[1, 1, 1, 1], channels=256, kernel_size=[3, 3]) /* group=0x55cc8bd51ee8 */;
+  %15 = add(%14, meta[relay.Constant][9] /* group=0x55cc8bd51f10 */) /* group=0x55cc8bd51f38 */;
+  %16 = nn.relu(%15) /* group=0x55cc8bd51f60 */;
+  %17 = nn.contrib_conv2d_winograd_without_weight_transform(%16, meta[relay.Constant][10] /* group=0x55cc8bd51f88 */, tile_size=4, padding=[1, 1, 1, 1], channels=256, kernel_size=[3, 3]) /* group=0x55cc8bd51fb0 */;
+  %18 = add(%17, meta[relay.Constant][11] /* group=0x55cc8bd51fd8 */) /* group=0x55cc8bd52000 */;
+  %19 = nn.relu(%18) /* group=0x55cc8bd52028 */;
+  %20 = nn.contrib_conv2d_winograd_without_weight_transform(%19, meta[relay.Constant][12] /* group=0x55cc8bd52050 */, tile_size=4, padding=[1, 1, 1, 1], channels=256, kernel_size=[3, 3]) /* group=0x55cc8bd52078 */;
+  %21 = add(%20, meta[relay.Constant][13] /* group=0x55cc8bd520a0 */) /* group=0x55cc8bd520c8 */;
+  %22 = nn.relu(%21) /* group=0x55cc8bd520f0 */;
+  %23 = nn.max_pool2d(%22, pool_size=[2, 2], strides=[2, 2], padding=[0, 0, 0, 0]) /* group=0x55cc8bd52118 */;
+  %24 = nn.contrib_conv2d_winograd_without_weight_transform(%23, meta[relay.Constant][14] /* group=0x55cc8bd52140 */, tile_size=2, padding=[1, 1, 1, 1], channels=512, kernel_size=[3, 3]) /* group=0x55cc8bd52168 */;
+  %25 = add(%24, meta[relay.Constant][15] /* group=0x55cc8bd52190 */) /* group=0x55cc8bd521b8 */;
+  %26 = nn.relu(%25) /* group=0x55cc8bd521e0 */;
+  %27 = nn.contrib_conv2d_winograd_without_weight_transform(%26, meta[relay.Constant][16] /* group=0x55cc8bd52208 */, tile_size=2, padding=[1, 1, 1, 1], channels=512, kernel_size=[3, 3]) /* group=0x55cc8bd52230 */;
+  %28 = add(%27, meta[relay.Constant][17] /* group=0x55cc8bd52258 */) /* group=0x55cc8bd52280 */;
+  %29 = nn.relu(%28) /* group=0x55cc8bd522a8 */;
+  %30 = nn.contrib_conv2d_winograd_without_weight_transform(%29, meta[relay.Constant][18] /* group=0x55cc8bd522d0 */, tile_size=2, padding=[1, 1, 1, 1], channels=512, kernel_size=[3, 3]) /* group=0x55cc8bd522f8 */;
+  %31 = add(%30, meta[relay.Constant][19] /* group=0x55cc8bd52320 */) /* group=0x55cc8bd52348 */;
+  %32 = nn.relu(%31) /* group=0x55cc8bd52370 */;
+  %33 = nn.max_pool2d(%32, pool_size=[2, 2], strides=[2, 2], padding=[0, 0, 0, 0]) /* group=0x55cc8bd52398 */;
+  %34 = nn.contrib_conv2d_winograd_without_weight_transform(%33, meta[relay.Constant][20] /* group=0x55cc8bd523c0 */, tile_size=2, padding=[1, 1, 1, 1], channels=512, kernel_size=[3, 3]) /* group=0x55cc8bd523e8 */;
+  %35 = add(%34, meta[relay.Constant][21] /* group=0x55cc8bd52410 */) /* group=0x55cc8bd52438 */;
+  %36 = nn.relu(%35) /* group=0x55cc8bd52460 */;
+  %37 = nn.contrib_conv2d_winograd_without_weight_transform(%36, meta[relay.Constant][22] /* group=0x55cc8bd52488 */, tile_size=2, padding=[1, 1, 1, 1], channels=512, kernel_size=[3, 3]) /* group=0x55cc8bd524b0 */;
+  %38 = add(%37, meta[relay.Constant][23] /* group=0x55cc8bd524d8 */) /* group=0x55cc8bd52500 */;
+  %39 = nn.relu(%38) /* group=0x55cc8bd52528 */;
+  %40 = nn.contrib_conv2d_winograd_without_weight_transform(%39, meta[relay.Constant][24] /* group=0x55cc8bd52550 */, tile_size=2, padding=[1, 1, 1, 1], channels=512, kernel_size=[3, 3]) /* group=0x55cc8bd52578 */;
+  %41 = add(%40, meta[relay.Constant][25] /* group=0x55cc8bd525a0 */) /* group=0x55cc8bd525c8 */;
+  %42 = nn.relu(%41) /* group=0x55cc8bd525f0 */;
+  %43 = nn.max_pool2d(%42, pool_size=[2, 2], strides=[2, 2], padding=[0, 0, 0, 0]) /* group=0x55cc8bd52618 */;
+  %44 = nn.batch_flatten(%43) /* group=0x55cc8bd52640 */;
+  %45 = nn.dense(%44, meta[relay.Constant][26] /* group=0x55cc8bd52668 */, units=4096) /* group=0x55cc8bd52690 */;
+  %46 = add(%45, meta[relay.Constant][27] /* group=0x55cc8bd526b8 */) /* group=0x55cc8bd526e0 */;
+  %47 = nn.relu(%46) /* group=0x55cc8bd52708 */;
+  %48 = nn.dense(%47, meta[relay.Constant][28] /* group=0x55cc8bd52730 */, units=4096) /* group=0x55cc8bd52758 */;
+  %49 = add(%48, meta[relay.Constant][29] /* group=0x55cc8bd52780 */) /* group=0x55cc8bd527a8 */;
+  %50 = nn.relu(%49) /* group=0x55cc8bd527d0 */;
+  %51 = nn.dense(%50, meta[relay.Constant][30] /* group=0x55cc8bd527f8 */, units=1000) /* group=0x55cc8bd52820 */;
+  %52 = add(%51, meta[relay.Constant][31] /* group=0x55cc8bd52848 */) /* group=0x55cc8bd52870 */;
+  nn.softmax(%52) /* group=0x55cc8bd52898 */
+}
+/* For debugging purposes the metadata section has been omitted.
+ * If you would like to see the full metadata section you can set the 
+ * option to `True` when invoking `astext`. 
+ */
+One or more operators have not been tuned. Please tune your model for better performance. Use DEBUG logging level to see more details.
