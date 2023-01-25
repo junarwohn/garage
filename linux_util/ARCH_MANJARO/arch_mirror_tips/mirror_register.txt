@@ -1,0 +1,2 @@
+sudo pacman-mirrors --country Japan Taiwan China Hong_Kong Indonesia Philippines South_Korea
+sudo pacman -Syyu

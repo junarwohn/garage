@@ -1,2 +1,0 @@
-﻿OpenCV Error: The function/feature is not implemented (HOG cascade is not supported in 3.0) in cv::CascadeClassifierImpl::Data::read, 
-file C:\build\master_winpack-build-win64-vc15\opencv\modules\objdetect\src\cascadedetect.cpp, line 1472
